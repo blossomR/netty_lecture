@@ -1,6 +1,5 @@
 package com.red.netty.third;
 
-import com.red.netty.second.MyServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
