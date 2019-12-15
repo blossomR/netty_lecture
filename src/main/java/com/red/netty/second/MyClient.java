@@ -17,11 +17,12 @@ public class MyClient {
             //对于客户端来说，只用handler，服务端用childHandler和handler都可以
             //服务端：childhander-> worker  /  handler-》 bossHandler
             bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class).
-                    handler(new MyClientHandler());
-            ChannelFuture channelFuture = bootstrap.connect("localhost", 8899).sync();
+                    handler(new MyClientInitializer());
+            ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 8899).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             eventLoopGroup.shutdownGracefully();
+
         }
 
     }
