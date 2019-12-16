@@ -21,7 +21,7 @@ public class MyChatClient {
             //服务端：childhander-> worker  /  handler-》 bossHandler
             bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class).
                     handler(new MyChatClientInitializer());
-            Channel channel = bootstrap.connect("127.0.0.1", 8899).sync().channel();
+            Channel channel = bootstrap.connect("127.0.0.1", 9998).sync().channel();
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             //不断从控制台获取输入信息，放到channel中，发送到服务端
